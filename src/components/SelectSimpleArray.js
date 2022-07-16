@@ -44,6 +44,7 @@ const SelectSimpleArray = ({ data }) => {
 
   const autoCompleteComponent = (
     <Autocomplete
+      sx={{ mb: "0.75rem" }}
       fullWidth
       options={data}
       multiple={multiselect}
@@ -65,37 +66,49 @@ const SelectSimpleArray = ({ data }) => {
 
   return (
     <Container maxWidth={"md"}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}>
         {React.cloneElement(
           autoCompleteComponent,
           !search && { filterOptions: (x) => x }
         )}
-        <FormControlLabel
-          sx={{ mx: "1rem" }}
-          control={
-            <SearchSwitch defaultChecked onChange={() => setSearch(!search)} />
-          }
-          label="Search"
-        />
-        <FormControlLabel
-          sx={{ mx: "1rem" }}
-          control={<SearchSwitch defaultChecked onChange={handleMultiselect} />}
-          label="Multiselect"
-        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { sm: "row" },
+          }}
+        >
+          <FormControlLabel
+            sx={{ mx: "1rem" }}
+            control={
+              <SearchSwitch
+                defaultChecked
+                onChange={() => setSearch(!search)}
+              />
+            }
+            label="Search"
+          />
+          <FormControlLabel
+            sx={{ mx: "1rem" }}
+            control={
+              <SearchSwitch defaultChecked onChange={handleMultiselect} />
+            }
+            label="Multiselect"
+          />
+        </Box>
       </Box>
       {multiselect && (
         <>
           <Button
             onClick={submitForm}
             variant={"outlined"}
-            sx={{ m: "1rem", px: "1.5rem" }}
+            sx={{ m: "1.5rem", px: "2rem" }}
           >
             Submit
           </Button>
           <Button
             onClick={clearSelection}
             variant={"outlined"}
-            sx={{ m: "1rem", px: "1.5rem" }}
+            sx={{ m: "1.5rem", px: "2rem" }}
           >
             Clear
           </Button>

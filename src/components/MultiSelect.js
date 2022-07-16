@@ -68,6 +68,7 @@ const MultiSelect = ({ data }) => {
 
   const autoCompleteComponent = (
     <Autocomplete
+      sx={{ mb: "0.75rem" }}
       fullWidth
       key={multiselect}
       multiple={multiselect}
@@ -119,47 +120,56 @@ const MultiSelect = ({ data }) => {
     <>
       <Container maxWidth={"md"} sx={{ mt: "2rem", p: "1rem" }}>
         <form>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
+          >
             {React.cloneElement(
               autoCompleteComponent,
               SearchFlag && {
                 filterOptions: (x) => x,
               }
             )}
-
-            <FormControlLabel
-              sx={{ mx: "1rem" }}
-              control={<SearchSwitch defaultChecked onChange={searchHandler} />}
-              label="Search"
-            />
-            <FormControlLabel
-              sx={{ mx: "1rem" }}
-              control={
-                <SearchSwitch defaultChecked onChange={multiselectHandler} />
-              }
-              label="Multiselect"
-            />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { sm: "row" },
+              }}
+            >
+              <FormControlLabel
+                sx={{ mx: "1rem" }}
+                control={
+                  <SearchSwitch defaultChecked onChange={searchHandler} />
+                }
+                label="Search"
+              />
+              <FormControlLabel
+                sx={{ mx: "1rem" }}
+                control={
+                  <SearchSwitch defaultChecked onChange={multiselectHandler} />
+                }
+                label="Multiselect"
+              />
+            </Box>
           </Box>
           {multiselect && (
-            <>
+            <Box>
               <Button
                 onClick={submitForm}
                 variant={"outlined"}
-                sx={{ m: "1rem", px: "1.5rem" }}
+                sx={{ m: "1.5rem", px: "2rem" }}
               >
                 Submit
               </Button>
               <Button
                 onClick={clearSelection}
                 variant={"outlined"}
-                sx={{ m: "1rem", px: "1.5rem" }}
+                sx={{ m: "1.5rem", px: "2rem" }}
               >
                 Clear
               </Button>
-            </>
+            </Box>
           )}
         </form>
-
         {submitted && multiselect && <DisplayRecords values={displayValues} />}
       </Container>
     </>
