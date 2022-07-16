@@ -19,7 +19,6 @@ const Header = (props) => {
               <Button
                 color="inherit"
                 onClick={() => {
-                  console.log("logout!!!");
                   props.setAuthentication(null);
                 }}
               >

@@ -24,7 +24,6 @@ const MultiSelect = ({ data }) => {
     const temp = optionList.filter(
       (item) => item.isChecked === true && item.id !== 0
     );
-    console.log("temp useeffect values", temp);
     setValues(temp);
   }, [optionList]);
 
@@ -52,23 +51,12 @@ const MultiSelect = ({ data }) => {
     setSearchFlag(!SearchFlag);
   };
 
-  // const updateHandler = (flag, id) => {
-  //   const temp = optionList.map((item, index) =>
-  //     item.id === id ? { ...item, isChecked: flag } : item
-  //   );
-  //   if (Array.isArray(temp) && temp.length > 0) {
-  //     console.log(temp);
-  //     setOptionList(temp);
-  //   }
-  // };
-
   const selectAll = (newValue) => {
     const temp = optionList.map((item, index) => ({
       ...item,
       isChecked: newValue,
     }));
     if (Array.isArray(temp) && temp.length > 0) {
-      console.log(temp);
       setOptionList(temp);
       setValues(temp);
     }
@@ -100,7 +88,6 @@ const MultiSelect = ({ data }) => {
                 ? { ...item, isChecked: true }
                 : { ...item, isChecked: false }
             );
-            console.log("temp", temp);
             setOptionList(temp);
           }
         }

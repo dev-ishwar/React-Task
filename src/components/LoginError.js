@@ -8,16 +8,16 @@ import { DialogContent } from "@mui/material";
 import { Button } from "@mui/material";
 
 //Login error component
-const LoginError = (props) => {
+const LoginError = ({ flag, resetValidity }) => {
   const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
-    setOpen(!open);
-  }, [!props.flag]);
+    setOpen(() => !open);
+  }, [!flag]);
 
   const handleToClose = () => {
     setOpen(false);
-    props.resetValidity(null);
+    resetValidity(null);
   };
 
   return (
@@ -25,8 +25,8 @@ const LoginError = (props) => {
       <DialogTitle>{"Email or Password is not valid!!"}</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Password should be numeric, upto 4 digit long and sum of digits should
-          be 10.!
+          Password must be numeric, upto 4 digits long and sum of digits must be
+          10!
         </DialogContentText>
       </DialogContent>
       <DialogActions>

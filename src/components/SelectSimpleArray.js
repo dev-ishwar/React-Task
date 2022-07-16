@@ -23,8 +23,6 @@ const SelectSimpleArray = ({ data }) => {
   const [lastSubmitted, setLastSubmitted] = useState([]);
   const [submitted, setsubmitted] = useState(false);
 
-  console.log("second values:", values);
-
   const handleMultiselect = (e) => {
     setValues([]);
     setMultiselect(!multiselect);

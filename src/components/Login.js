@@ -25,9 +25,7 @@ const Login = (props) => {
     const emailIsValid = email.trim() !== "" && email.trim().includes("@");
     const passwordIsValid =
       password.length !== 0 && checkIf10(password) === 10 ? true : false;
-
     const formIsValid = emailIsValid && passwordIsValid;
-    console.log("login:", formIsValid);
     props.setFormValidity(formIsValid);
 
     setEmail("");
