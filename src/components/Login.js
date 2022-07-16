@@ -52,9 +52,20 @@ const Login = (props) => {
         </div>
 
         <div className={classes.formControls}>
-          <label htmlFor="password">Password</label>
+          <div className={classes.password}>
+            <label htmlFor="password">Password</label>
+            <span
+              className={classes.tooltip}
+              data-tooltip="4 digits long and sum of digits must be
+            10."
+            >
+              ?
+            </span>
+          </div>
           <input
             type="password"
+            id="password"
+            name="password"
             title={`Password should be number only. 4 digits long and sum of digits should be 10`}
             pattern="[0-9]*"
             maxLength="4"
@@ -62,6 +73,7 @@ const Login = (props) => {
             onChange={(e) =>
               setPassword((v) => (e.target.validity.valid ? e.target.value : v))
             }
+            className={classes["password-input"]}
             value={password}
           />
         </div>

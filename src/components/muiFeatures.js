@@ -36,28 +36,3 @@ export const SearchSwitch = styled(Switch)(({ theme }) => ({
     margin: 2,
   },
 }));
-
-//Simple controlled switch
-
-export function Toggle({ setSecondary, text }) {
-  const [checked, setChecked] = React.useState(true);
-
-  const handleChange = (event) => {
-    setSecondary((v) => !v);
-    setChecked(event.target.checked);
-  };
-
-  return (
-    <FormControlLabel
-      sx={{ mx: "1rem" }}
-      control={
-        <Switch
-          checked={checked}
-          onChange={handleChange}
-          inputProps={{ "aria-label": "controlled" }}
-        />
-      }
-      label={text}
-    />
-  );
-}

@@ -81,3 +81,36 @@
 .form * {
   font-family: "Courier New", Courier, monospace;
 }
+
+.password {
+  display: flex;
+}
+
+.tooltip {
+  margin-left: 1rem;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  padding: 1px 3px;
+  position: relative;
+  color: var(--light);
+}
+
+.tooltip::after {
+  position: absolute;
+  top: 20px;
+  left: 2rem;
+  width: 15rem;
+  display: block;
+  transform: translateY(-20px);
+  content: attr(data-tooltip);
+  opacity: 0;
+  font-size: 13px;
+  color: var(--light);
+  font-weight: lighter;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}

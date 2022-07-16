@@ -53,7 +53,7 @@ const SelectSimpleArray = ({ data }) => {
       disableCloseOnSelect={multiselect}
       onChange={(e, newValue) => setValues(newValue)}
       getOptionLabel={(option) => option.title ?? option}
-      renderInput={(props) => <TextField {...props} placeholder="Select" />}
+      renderInput={(props) => <TextField {...props} label="Select" />}
       renderOption={(props, option, { selected }) => (
         <li {...props}>
           {multiselect && (
