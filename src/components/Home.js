@@ -4,17 +4,17 @@ import classes from "./Home.module.css";
 
 //Dummy data imports
 import { top100Films } from "../data";
-import { components } from "../data";
+// import { components } from "../data";
 import { skills } from "../data";
 import { Box } from "@mui/material";
 import { Container } from "@mui/system";
 
-const TechStack = [
-  { title: "React", id: "react" },
-  { title: "Angular", id: "angular" },
-  { title: "Vue", id: "vue" },
-  { title: "Ember", id: "ember" },
-];
+// const TechStack = [
+//   { title: "React", id: "react" },
+//   { title: "Angular", id: "angular" },
+//   { title: "Vue", id: "vue" },
+//   { title: "Ember", id: "ember" },
+// ];
 
 const Home = () => {
   return (
