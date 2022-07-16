@@ -23,7 +23,7 @@ const DisplayRecords = ({ values }) => {
           variant="h6"
           component="div"
         >
-          List of last submitted records...
+          List of submitted records -
         </Typography>
 
         <Demo>
