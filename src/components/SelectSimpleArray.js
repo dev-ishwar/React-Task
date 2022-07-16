@@ -97,7 +97,12 @@ const SelectSimpleArray = ({ data }) => {
         </Box>
       </Box>
       {multiselect && (
-        <>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { sm: "row" },
+          }}
+        >
           <Button
             onClick={submitForm}
             variant={"outlined"}
@@ -112,7 +117,7 @@ const SelectSimpleArray = ({ data }) => {
           >
             Clear
           </Button>
-        </>
+        </Box>
       )}
 
       {submitted && multiselect && <DisplayRecords values={lastSubmitted} />}

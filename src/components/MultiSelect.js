@@ -152,18 +152,23 @@ const MultiSelect = ({ data }) => {
             </Box>
           </Box>
           {multiselect && (
-            <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { sm: "row" },
+              }}
+            >
               <Button
                 onClick={submitForm}
                 variant={"outlined"}
-                sx={{ m: "1.5rem", px: "2rem" }}
+                sx={{ m: "1rem", px: "2rem" }}
               >
                 Submit
               </Button>
               <Button
                 onClick={clearSelection}
                 variant={"outlined"}
-                sx={{ m: "1.5rem", px: "2rem" }}
+                sx={{ m: "1rem", px: "2rem" }}
               >
                 Clear
               </Button>
