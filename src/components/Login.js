@@ -34,7 +34,7 @@ const Login = (props) => {
 
   return (
     <div className={classes.login}>
-      <div className={classes.header}>Login Page</div>
+      <div className={classes.header}>Login</div>
 
       <form onSubmit={submitHandler} className={classes.form}>
         <div className={classes.formControls}>
