@@ -1,0 +1,30 @@
+:root {
+  /* --darker:  #242f9b; */
+  /* --dark: #646fd4; */
+
+  --darker: #2196f3;
+  --dark: #03a9f4;
+  --light: #9ba3eb;
+  --lighter: #dbdffd;
+}
+
+.home {
+  text-align: center;
+  background-color: var(--dark);
+  padding: 1rem;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.box {
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.box h3 {
+  margin-bottom: 1rem;
+}
+
+.box p {
+  line-height: 1.8;
+}
